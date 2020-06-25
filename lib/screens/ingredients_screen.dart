@@ -1,6 +1,6 @@
 import 'package:cocktailsapp/models/ingredients.dart';
 import 'package:cocktailsapp/screens/cocktails_list_screen.dart';
-import 'package:cocktailsapp/utils/slide_animation.dart';
+import 'package:cocktailsapp/anim/slide_animation.dart';
 import '../blocs/ingredients_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -18,12 +18,6 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
 
     _bloc = IngredientsBloc();
     _bloc.loadIngredients();
-  }
-
-  @override
-  void dispose() {
-    _bloc.dispose();
-    super.dispose();
   }
 
   @override

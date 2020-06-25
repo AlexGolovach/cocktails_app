@@ -1,5 +1,5 @@
 import 'package:cocktailsapp/models/categories.dart';
-import 'package:cocktailsapp/provider/result.dart';
+import 'package:cocktailsapp/data/result.dart';
 import 'package:cocktailsapp/repositories/categories_repository.dart';
 import 'package:rxdart/rxdart.dart';
 

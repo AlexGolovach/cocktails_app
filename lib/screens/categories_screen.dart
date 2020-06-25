@@ -1,7 +1,7 @@
 import 'package:cocktailsapp/blocs/categories_bloc.dart';
 import 'package:cocktailsapp/models/categories.dart';
 import 'package:cocktailsapp/screens/cocktails_list_screen.dart';
-import 'package:cocktailsapp/utils/slide_animation.dart';
+import 'package:cocktailsapp/anim/slide_animation.dart';
 import 'package:flutter/material.dart';
 
 class CategoriesScreen extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:cocktailsapp/blocs/cocktails_list_bloc.dart';
 import 'package:cocktailsapp/models/cocktails.dart';
 import 'package:cocktailsapp/screens/cocktail_details_screen.dart';
-import 'package:cocktailsapp/utils/slide_animation.dart';
+import 'package:cocktailsapp/anim/slide_animation.dart';
 import 'package:flutter/material.dart';
 
 class CocktailsListScreen extends StatefulWidget {
@@ -28,12 +28,6 @@ class _CocktailsListScreenState extends State<CocktailsListScreen> {
     } else if (widget.category.isNotEmpty) {
       _bloc.loadCocktails(category: widget.category);
     }
-  }
-
-  @override
-  void dispose() {
-    _bloc.dispose();
-    super.dispose();
   }
 
   @override

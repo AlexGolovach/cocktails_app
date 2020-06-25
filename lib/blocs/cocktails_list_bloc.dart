@@ -1,5 +1,5 @@
 import 'package:cocktailsapp/models/cocktails.dart';
-import 'package:cocktailsapp/provider/result.dart';
+import 'package:cocktailsapp/data/result.dart';
 import 'package:cocktailsapp/repositories/cocktails_repository.dart';
 import 'package:rxdart/rxdart.dart';
 

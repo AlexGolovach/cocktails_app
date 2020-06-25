@@ -5,14 +5,14 @@ import 'package:cocktailsapp/models/categories.dart';
 import 'package:cocktailsapp/models/cocktail_details.dart';
 import 'package:cocktailsapp/models/cocktails.dart';
 import 'package:cocktailsapp/models/ingredients.dart';
-import 'package:cocktailsapp/provider/result.dart';
+import 'package:cocktailsapp/data/result.dart';
 import 'package:http/http.dart' show Client;
 
 class CocktailsApiProvider {
-  Client client = Client();
+  final Client _client = Client();
 
   Future<Result> loadIngredients() async {
-    final response = await client.get(Api.getIngredientsList());
+    final response = await _client.get(Api.getIngredientsList());
 
     if (response.statusCode == 200) {
       return Result<List<Ingredient>>.success(
@@ -23,7 +23,7 @@ class CocktailsApiProvider {
   }
 
   Future<Result> loadCategories() async {
-    final response = await client.get(Api.getCategoriesList());
+    final response = await _client.get(Api.getCategoriesList());
 
     if (response.statusCode == 200) {
       return Result<List<Category>>.success(
@@ -35,7 +35,7 @@ class CocktailsApiProvider {
 
   Future<Result> loadCocktailsByIngredient(String ingredient) async {
     final response =
-        await client.get(Api.getCocktailsListByIngredient(ingredient));
+        await _client.get(Api.getCocktailsListByIngredient(ingredient));
 
     if (response.statusCode == 200) {
       return Result<List<Cocktail>>.success(
@@ -46,7 +46,8 @@ class CocktailsApiProvider {
   }
 
   Future<Result> loadCocktailsByCategory(String category) async {
-    final response = await client.get(Api.getCocktailsListByCategory(category));
+    final response =
+        await _client.get(Api.getCocktailsListByCategory(category));
 
     if (response.statusCode == 200) {
       return Result<List<Cocktail>>.success(
@@ -57,7 +58,7 @@ class CocktailsApiProvider {
   }
 
   Future<Result> loadCocktailDetails(String id) async {
-    final response = await client.get(Api.getCocktailDetails(id));
+    final response = await _client.get(Api.getCocktailDetails(id));
 
     if (response.statusCode == 200) {
       return Result<CocktailDetails>.success(
